@@ -175,8 +175,8 @@ def gen_dynamic(parents, current, next):
 """
 
             body += f"""
-<Shape Type="Rect" CutIndex="{current_cut}" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 {x-5} {current_y+5}</XForm>
+<Shape Type="Rect" CutIndex="{current_cut}" W="12" H="12" Cr="0">
+    <XForm>1 0 0 1 {x-6} {current_y+6}</XForm>
 </Shape>
 """
             add_text(x, current_y + 15, 6, f"{v:.2f}")
