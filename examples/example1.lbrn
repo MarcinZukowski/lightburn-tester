@@ -2040,5 +2040,5 @@
         <XForm>1 0 0 1 980 235</XForm>
 </Shape>            
 
-    <Notes ShowOnLoad="0" Notes="Generated with lightburn-tester, command:&#10;  ./lbt.py power=70,80 speed=100,200 angle=0 passCount=1 -m Fill+Line interval=0.1-0.5@0.06"/>
+    <Notes ShowOnLoad="0" Notes="Generated with lightburn-tester, command:&#10;  ./lbt.py -f examples/example1.lbrn power=70,80 speed=100,200 angle=0 passCount=1 -m Fill+Line interval=0.1-0.5@0.06"/>
 </LightBurnProject>
