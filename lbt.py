@@ -261,7 +261,9 @@ def main():
     current_y += 30
 
     for (c, v) in constants:
-        add_text(lmargin, current_y, 10, f"{c}: {v[0]}")
+        val = v[0]
+        add_text(lmargin, current_y, 10, f"{c}: {val}")
+        set_cut(c, val)
         current_y += 15
 
     current_y += 10
