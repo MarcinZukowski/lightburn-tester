@@ -133,6 +133,13 @@ def isfloat(value):
         return False
 
 
+def fmt(v):
+    if int(v) == v:
+        return str(int(v))
+    else:
+        return f"{v:.2f}"
+
+
 # Helper to handle special "power" behavior
 def set_cut(k, v):
     if k == "power":
@@ -179,7 +186,9 @@ def gen_dynamic(parents, current, next):
     <XForm>1 0 0 1 {x-6} {current_y+6}</XForm>
 </Shape>
 """
-            add_text(x, current_y + 15, 6, f"{v:.2f}")
+            label = fmt(v)
+
+            add_text(x, current_y + 15, 6, label)
             x -= 20
 
             current_cut += 1
@@ -262,7 +271,7 @@ def main():
 
     for (c, v) in constants:
         val = v[0]
-        add_text(lmargin, current_y, 10, f"{c}: {val}")
+        add_text(lmargin, current_y, 10, f"{c}: {fmt(val)}")
         set_cut(c, val)
         current_y += 15
 
