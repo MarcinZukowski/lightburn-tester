@@ -9,7 +9,7 @@ import sys
 DEFAULT_FILENAME = "test.lbrn"
 PROLOGUE_FILENAME = "data/prologue.xml"
 EPILOGUE_FILENAME = "data/epilogue.xml"
-DEFAULT_LEFT_MARGIN = 1150
+DEFAULT_LEFT_MARGIN = 950
 DEFAULT_MODE = "Fill"
 
 # Available cut modes
