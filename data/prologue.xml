@@ -26,11 +26,11 @@
     <CutSetting type="Cut">
         <index Value="0"/>
         <name Value="Text"/>
-        <minPower Value="50"/>
-        <maxPower Value="50"/>
-        <minPower2 Value="50"/>
-        <maxPower2 Value="50"/>
-        <speed Value="100"/>
+        <minPower Value="15"/>
+        <maxPower Value="15"/>
+        <minPower2 Value="15"/>
+        <maxPower2 Value="15"/>
+        <speed Value="350"/>
         <kerf Value="0"/>
         <zOffset Value="0"/>
         <enableLaser1 Value="1"/>
