@@ -26,11 +26,11 @@
     <CutSetting type="Cut">
         <index Value="0"/>
         <name Value="Text"/>
-        <minPower Value="50"/>
-        <maxPower Value="50"/>
-        <minPower2 Value="50"/>
-        <maxPower2 Value="50"/>
-        <speed Value="100"/>
+        <minPower Value="15"/>
+        <maxPower Value="15"/>
+        <minPower2 Value="15"/>
+        <maxPower2 Value="15"/>
+        <speed Value="350"/>
         <kerf Value="0"/>
         <zOffset Value="0"/>
         <enableLaser1 Value="1"/>
@@ -82,33 +82,63 @@
     </CutSetting>
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="LightBurn Test (mode=Scan+Cut)" H="16" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 0</XForm>
+     Str="LightBurn Test (mode=Scan+Cut)" H="10" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
+        <XForm>1 0 0 1 950 0</XForm>
 </Shape>            
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="angle: 0.0" H="10" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 30</XForm>
+     Str="angle=0, passCount=1" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
+        <XForm>1 0 0 1 950 14</XForm>
 </Shape>            
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="passCount: 1.0" H="10" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 45</XForm>
+     Str="power, speed" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
+        <XForm>1 0 0 1 810 24</XForm>
 </Shape>            
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="power: 70.0, speed: 100.0" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 70</XForm>
+     Str="interval" H="8" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 880.0 24</XForm>
 </Shape>            
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="interval:" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 85</XForm>
+     Str="0.1" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 943.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="0.16" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 923.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="0.22" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 903.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="0.28" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 883.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="0.34" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 863.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="0.4" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 843.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="0.46" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 823.0 34</XForm>
 </Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="1"/>
-<name Value="power: 70.00,speed: 100.00,interval: 0.10"/>
+<name Value="power=70,speed=100,interval=0.1"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -159,24 +189,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.1"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="1" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1095 90</XForm>
+<Shape Type="Rect" CutIndex="1" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 943.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.10" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1100 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="2"/>
-<name Value="power: 70.00,speed: 100.00,interval: 0.16"/>
+<name Value="power=70,speed=100,interval=0.16"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -227,24 +253,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.16"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="2" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1075 90</XForm>
+<Shape Type="Rect" CutIndex="2" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 923.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.16" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1080 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="3"/>
-<name Value="power: 70.00,speed: 100.00,interval: 0.22"/>
+<name Value="power=70,speed=100,interval=0.22"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -295,24 +317,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.22"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="3" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1055 90</XForm>
+<Shape Type="Rect" CutIndex="3" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 903.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.22" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1060 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="4"/>
-<name Value="power: 70.00,speed: 100.00,interval: 0.28"/>
+<name Value="power=70,speed=100,interval=0.28"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -363,24 +381,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.28"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="4" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1035 90</XForm>
+<Shape Type="Rect" CutIndex="4" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 883.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.28" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1040 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="5"/>
-<name Value="power: 70.00,speed: 100.00,interval: 0.34"/>
+<name Value="power=70,speed=100,interval=0.34"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -431,24 +445,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.34"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="5" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1015 90</XForm>
+<Shape Type="Rect" CutIndex="5" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 863.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.34" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1020 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="6"/>
-<name Value="power: 70.00,speed: 100.00,interval: 0.40"/>
+<name Value="power=70,speed=100,interval=0.4"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -499,24 +509,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.4"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="6" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 995 90</XForm>
+<Shape Type="Rect" CutIndex="6" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 843.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.40" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1000 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="7"/>
-<name Value="power: 70.00,speed: 100.00,interval: 0.46"/>
+<name Value="power=70,speed=100,interval=0.46"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -567,34 +573,25 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.46"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="7" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 975 90</XForm>
+<Shape Type="Rect" CutIndex="7" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 823.0 51.0</XForm>
 </Shape>
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.46" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 980 100</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="power: 70.0, speed: 200.0" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 115</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="interval:" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 130</XForm>
+     Str="p=70,  s=100" H="6" LS="0" LnS="0" Ah="0" Av="1" Weld="1">
+        <XForm>1 0 0 1 810 51.0</XForm>
 </Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="8"/>
-<name Value="power: 70.00,speed: 200.00,interval: 0.10"/>
+<name Value="power=70,speed=200,interval=0.1"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -645,24 +642,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.1"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="8" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1095 135</XForm>
+<Shape Type="Rect" CutIndex="8" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 943.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.10" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1100 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="9"/>
-<name Value="power: 70.00,speed: 200.00,interval: 0.16"/>
+<name Value="power=70,speed=200,interval=0.16"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -713,24 +706,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.16"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="9" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1075 135</XForm>
+<Shape Type="Rect" CutIndex="9" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 923.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.16" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1080 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="10"/>
-<name Value="power: 70.00,speed: 200.00,interval: 0.22"/>
+<name Value="power=70,speed=200,interval=0.22"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -781,24 +770,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.22"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="10" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1055 135</XForm>
+<Shape Type="Rect" CutIndex="10" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 903.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.22" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1060 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="11"/>
-<name Value="power: 70.00,speed: 200.00,interval: 0.28"/>
+<name Value="power=70,speed=200,interval=0.28"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -849,24 +834,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.28"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="11" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1035 135</XForm>
+<Shape Type="Rect" CutIndex="11" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 883.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.28" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1040 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="12"/>
-<name Value="power: 70.00,speed: 200.00,interval: 0.34"/>
+<name Value="power=70,speed=200,interval=0.34"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -917,24 +898,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.34"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="12" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1015 135</XForm>
+<Shape Type="Rect" CutIndex="12" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 863.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.34" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1020 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="13"/>
-<name Value="power: 70.00,speed: 200.00,interval: 0.40"/>
+<name Value="power=70,speed=200,interval=0.4"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -985,24 +962,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.4"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="13" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 995 135</XForm>
+<Shape Type="Rect" CutIndex="13" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 843.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.40" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1000 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="14"/>
-<name Value="power: 70.00,speed: 200.00,interval: 0.46"/>
+<name Value="power=70,speed=200,interval=0.46"/>
 <minPower Value="70.0"/>
 <maxPower Value="70.0"/>
 <minPower2 Value="20"/>
@@ -1053,34 +1026,25 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.46"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="14" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 975 135</XForm>
+<Shape Type="Rect" CutIndex="14" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 823.0 71.0</XForm>
 </Shape>
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.46" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 980 145</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="power: 80.0, speed: 100.0" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 160</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="interval:" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 175</XForm>
+     Str="p=70,  s=200" H="6" LS="0" LnS="0" Ah="0" Av="1" Weld="1">
+        <XForm>1 0 0 1 810 71.0</XForm>
 </Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="15"/>
-<name Value="power: 80.00,speed: 100.00,interval: 0.10"/>
+<name Value="power=80,speed=100,interval=0.1"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1131,24 +1095,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.1"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="15" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1095 180</XForm>
+<Shape Type="Rect" CutIndex="15" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 943.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.10" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1100 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="16"/>
-<name Value="power: 80.00,speed: 100.00,interval: 0.16"/>
+<name Value="power=80,speed=100,interval=0.16"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1199,24 +1159,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.16"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="16" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1075 180</XForm>
+<Shape Type="Rect" CutIndex="16" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 923.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.16" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1080 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="17"/>
-<name Value="power: 80.00,speed: 100.00,interval: 0.22"/>
+<name Value="power=80,speed=100,interval=0.22"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1267,24 +1223,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.22"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="17" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1055 180</XForm>
+<Shape Type="Rect" CutIndex="17" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 903.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.22" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1060 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="18"/>
-<name Value="power: 80.00,speed: 100.00,interval: 0.28"/>
+<name Value="power=80,speed=100,interval=0.28"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1335,24 +1287,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.28"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="18" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1035 180</XForm>
+<Shape Type="Rect" CutIndex="18" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 883.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.28" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1040 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="19"/>
-<name Value="power: 80.00,speed: 100.00,interval: 0.34"/>
+<name Value="power=80,speed=100,interval=0.34"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1403,24 +1351,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.34"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="19" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1015 180</XForm>
+<Shape Type="Rect" CutIndex="19" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 863.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.34" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1020 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="20"/>
-<name Value="power: 80.00,speed: 100.00,interval: 0.40"/>
+<name Value="power=80,speed=100,interval=0.4"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1471,24 +1415,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.4"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="20" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 995 180</XForm>
+<Shape Type="Rect" CutIndex="20" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 843.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.40" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1000 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="21"/>
-<name Value="power: 80.00,speed: 100.00,interval: 0.46"/>
+<name Value="power=80,speed=100,interval=0.46"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1539,34 +1479,25 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.46"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="21" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 975 180</XForm>
+<Shape Type="Rect" CutIndex="21" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 823.0 91.0</XForm>
 </Shape>
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.46" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 980 190</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="power: 80.0, speed: 200.0" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 205</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="interval:" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 220</XForm>
+     Str="p=80,  s=100" H="6" LS="0" LnS="0" Ah="0" Av="1" Weld="1">
+        <XForm>1 0 0 1 810 91.0</XForm>
 </Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="22"/>
-<name Value="power: 80.00,speed: 200.00,interval: 0.10"/>
+<name Value="power=80,speed=200,interval=0.1"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1617,24 +1548,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.1"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="22" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1095 225</XForm>
+<Shape Type="Rect" CutIndex="22" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 943.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.10" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1100 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="23"/>
-<name Value="power: 80.00,speed: 200.00,interval: 0.16"/>
+<name Value="power=80,speed=200,interval=0.16"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1685,24 +1612,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.16"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="23" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1075 225</XForm>
+<Shape Type="Rect" CutIndex="23" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 923.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.16" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1080 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="24"/>
-<name Value="power: 80.00,speed: 200.00,interval: 0.22"/>
+<name Value="power=80,speed=200,interval=0.22"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1753,24 +1676,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.22"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="24" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1055 225</XForm>
+<Shape Type="Rect" CutIndex="24" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 903.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.22" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1060 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="25"/>
-<name Value="power: 80.00,speed: 200.00,interval: 0.28"/>
+<name Value="power=80,speed=200,interval=0.28"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1821,24 +1740,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.28"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="25" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1035 225</XForm>
+<Shape Type="Rect" CutIndex="25" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 883.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.28" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1040 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="26"/>
-<name Value="power: 80.00,speed: 200.00,interval: 0.34"/>
+<name Value="power=80,speed=200,interval=0.34"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1889,24 +1804,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.34"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="26" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1015 225</XForm>
+<Shape Type="Rect" CutIndex="26" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 863.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.34" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1020 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="27"/>
-<name Value="power: 80.00,speed: 200.00,interval: 0.40"/>
+<name Value="power=80,speed=200,interval=0.4"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -1957,24 +1868,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.4"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="27" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 995 225</XForm>
+<Shape Type="Rect" CutIndex="27" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 843.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.40" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1000 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan+Cut">
 <index Value="28"/>
-<name Value="power: 80.00,speed: 200.00,interval: 0.46"/>
+<name Value="power=80,speed=200,interval=0.46"/>
 <minPower Value="80.0"/>
 <maxPower Value="80.0"/>
 <minPower2 Value="20"/>
@@ -2025,19 +1932,20 @@
 <overscanPercent Value="2.5"/>
 <floodFill Value="0"/>
 <interval Value="0.46"/>
-<angle Value="0"/>
+<angle Value="0.0"/>
 <cellsPerInch Value="50"/>
 <halftoneAngle Value="22.5"/>
+<passCount Value="1.0"/>
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="28" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 975 225</XForm>
+<Shape Type="Rect" CutIndex="28" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 823.0 111.0</XForm>
 </Shape>
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.46" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 980 235</XForm>
+     Str="p=80,  s=200" H="6" LS="0" LnS="0" Ah="0" Av="1" Weld="1">
+        <XForm>1 0 0 1 810 111.0</XForm>
 </Shape>            
 
     <Notes ShowOnLoad="0" Notes="Generated with lightburn-tester, command:&#10;  ./lbt.py -f examples/example1.lbrn power=70,80 speed=100,200 angle=0 passCount=1 -m Fill+Line interval=0.1-0.5@0.06"/>

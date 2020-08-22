@@ -11,6 +11,17 @@ PROLOGUE_FILENAME = "data/prologue.xml"
 EPILOGUE_FILENAME = "data/epilogue.xml"
 DEFAULT_LEFT_MARGIN = 950
 DEFAULT_MODE = "Fill"
+FONT_SIZE_TITLE = 10
+FONT_SIZE_LABELS = 8
+FONT_SIZE_VALUES = 6
+BOX_SIZE = 14
+BOX_SPACE = 20
+BOX_SIZE_HALF = BOX_SIZE / 2
+
+KEY_DEFAULT = "default"
+KEY_SHORT = "short"
+
+first_line = True
 
 # Available cut modes
 modes = {
@@ -22,14 +33,25 @@ modes = {
     "Scan+Cut": "Scan+Cut",
 }
 
+
+# Helper class to keep one setting information
+class Setting:
+    def __init__(self, name, default, short = None):
+        self.name = name
+        self.default= default
+        self.short = short or name
+
+
 # Available settings
-settings = {
-    "power": 80,
-    "speed": 100,
-    "interval": 0.1,
-    "passCount": 1,
-    "angle": 0,
-}
+settings_list = [
+    Setting("power", 80, "p"),
+    Setting("speed", 100, "s"),
+    Setting("interval", 0.1, "i"),
+    Setting("passCount", 1, "pc"),
+    Setting("angle", 0, "a"),
+]
+
+settings_map = {v.name: v for v in settings_list}
 
 # Generated cut values
 cut = {
@@ -101,8 +123,8 @@ mode = None
 class MyParser(optparse.OptionParser):
     def format_epilog(self, formatter):
         res = "\nAvailable setting names: "
-        for k, v in settings.items():
-            res += "\n  {0:10s} default: {1}".format(k, v)
+        for s in settings_list:
+            res += "\n  {0:10s} default: {1}".format(s.name, s.default)
         res += """
 
 Each setting is specified as <name>=<values1>,<values2>
@@ -147,7 +169,7 @@ def set_cut(k, v):
 
 
 def gen_dynamic(parents, current, next):
-    global body, current_y, current_cut, cut, mode
+    global body, current_y, current_cut, cut, mode, lmargin, first_line
     (name, values) = current
     if len(next) > 0:
         for v in values:
@@ -155,20 +177,31 @@ def gen_dynamic(parents, current, next):
             new_parents = parents + [(name, v)]
             gen_dynamic(new_parents, next[0], next[1:])
     else:
-        if len(parents) > 0:
-            header = ", ".join([f"{k}: {v}" for (k, v) in parents])
-            add_text(lmargin, current_y, 8, header)
-            current_y += 15
-            add_text(lmargin, current_y, 8, f"{name}:")
+        if first_line:
 
-        x = lmargin - 50
+            if len(parents) > 0:
+                parents_header = ", ".join([k for (k, v) in parents])
+                add_text(lmargin - len(values) * BOX_SPACE, current_y, FONT_SIZE_LABELS, parents_header)
 
+            current_y += 2 + add_text(lmargin - (len(values) * BOX_SPACE) / 2, current_y,
+                                      FONT_SIZE_LABELS, name, ah=1)
+
+            x = lmargin
+            for v in values:
+                add_text(x - BOX_SIZE_HALF, current_y, FONT_SIZE_VALUES, fmt(v), ah=1)
+                x -= BOX_SPACE
+
+            current_y += 4 + FONT_SIZE_VALUES
+
+            first_line = False
+
+        x = lmargin
         for v in values:
             set_cut("index", current_cut)
             set_cut(name, v)
 
             new_parents = parents + [(name, v)]
-            cutname = ",".join([f"{k}: {v:.2f}" for (k, v) in new_parents])
+            cutname = ",".join([f"{k}={fmt(v)}" for (k, v) in new_parents])
             set_cut("name", cutname)
 
             cutvalues = "".join([f"""<{k} Value="{v}"/>\n""" for (k, v) in cut.items()])
@@ -179,28 +212,30 @@ def gen_dynamic(parents, current, next):
 """
 
             body += f"""
-<Shape Type="Rect" CutIndex="{current_cut}" W="12" H="12" Cr="0">
-    <XForm>1 0 0 1 {x-6} {current_y+6}</XForm>
+<Shape Type="Rect" CutIndex="{current_cut}" W="{BOX_SIZE}" H="{BOX_SIZE}" Cr="0">
+    <XForm>1 0 0 1 {x - BOX_SIZE_HALF} {current_y + BOX_SIZE_HALF}</XForm>
 </Shape>
 """
-            label = fmt(v)
-
-            add_text(x, current_y + 15, 6, label)
-            x -= 20
+            x -= BOX_SPACE
 
             current_cut += 1
 
-        current_y += 30
+        if len(parents) > 0:
+            header = ",  ".join([f"{settings_map[k].short}={fmt(v)}" for (k, v) in parents])
+            add_text(x, current_y + BOX_SIZE_HALF, FONT_SIZE_VALUES, header, av=1)
+
+        current_y += BOX_SPACE
 
 
-def add_text(x, y, h, s):
+def add_text(x, y, h, s, ah=0, av=0):
     global body
     body += f"""
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="{s}" H="{h}" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
+     Str="{s}" H="{h}" LS="0" LnS="0" Ah="{ah}" Av="{av}" Weld="1">
         <XForm>1 0 0 1 {x} {y}</XForm>
 </Shape>            
 """
+    return h
 
 
 def main():
@@ -230,7 +265,7 @@ def main():
         assert len(sp) == 2, f"wrong setting format: '{arg}'"
 
         name = sp[0]
-        assert name in settings, f"unknown setting: '{name}'"
+        assert name in settings_map, f"unknown setting: '{name}'"
         assert name not in seen, f"repeated setting: '{name}'"
         seen.append(name)
 
@@ -263,16 +298,13 @@ def main():
     with open(EPILOGUE_FILENAME, 'r') as file:
         epilogue = file.read()
 
-    add_text(lmargin, current_y, 16, f"LightBurn Test (mode={mode})")
-    current_y += 30
+    current_y += 4 + add_text(lmargin, current_y, FONT_SIZE_TITLE, f"LightBurn Test (mode={mode})")
 
     for (c, v) in constants:
         val = v[0]
-        add_text(lmargin, current_y, 10, f"{c}: {fmt(val)}")
         set_cut(c, val)
-        current_y += 15
-
-    current_y += 10
+    current_y += 2 + add_text(lmargin, current_y, FONT_SIZE_LABELS,
+                              ", ".join([f"{c}={fmt(v[0])}" for (c, v) in constants]))
 
     gen_dynamic([], dynamic[0], dynamic[1:])
 

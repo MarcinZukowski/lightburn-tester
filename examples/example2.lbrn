@@ -26,11 +26,11 @@
     <CutSetting type="Cut">
         <index Value="0"/>
         <name Value="Text"/>
-        <minPower Value="50"/>
-        <maxPower Value="50"/>
-        <minPower2 Value="50"/>
-        <maxPower2 Value="50"/>
-        <speed Value="100"/>
+        <minPower Value="15"/>
+        <maxPower Value="15"/>
+        <minPower2 Value="15"/>
+        <maxPower2 Value="15"/>
+        <speed Value="350"/>
         <kerf Value="0"/>
         <zOffset Value="0"/>
         <enableLaser1 Value="1"/>
@@ -82,38 +82,68 @@
     </CutSetting>
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="LightBurn Test (mode=Scan)" H="16" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 0</XForm>
+     Str="LightBurn Test (mode=Scan)" H="10" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
+        <XForm>1 0 0 1 950 0</XForm>
 </Shape>            
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="power: 80.0" H="10" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 30</XForm>
+     Str="power=80, speed=100" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
+        <XForm>1 0 0 1 950 14</XForm>
 </Shape>            
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="speed: 100.0" H="10" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 45</XForm>
+     Str="interval" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
+        <XForm>1 0 0 1 810 24</XForm>
 </Shape>            
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="interval: 0.1" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 70</XForm>
+     Str="angle" H="8" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 880.0 24</XForm>
 </Shape>            
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="angle:" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 85</XForm>
+     Str="0" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 943.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="15" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 923.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="30" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 903.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="45" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 883.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="60" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 863.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="75" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 843.0 34</XForm>
+</Shape>            
+
+<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="90" H="6" LS="0" LnS="0" Ah="1" Av="0" Weld="1">
+        <XForm>1 0 0 1 823.0 34</XForm>
 </Shape>            
 
 <CutSetting type="Scan">
 <index Value="1"/>
-<name Value="interval: 0.10,angle: 0.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.1,angle=0"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -165,23 +195,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="1" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1095 90</XForm>
+<Shape Type="Rect" CutIndex="1" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 943.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1100 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="2"/>
-<name Value="interval: 0.10,angle: 15.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.1,angle=15"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -233,23 +258,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="2" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1075 90</XForm>
+<Shape Type="Rect" CutIndex="2" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 923.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="15.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1080 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="3"/>
-<name Value="interval: 0.10,angle: 30.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.1,angle=30"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -301,23 +321,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="3" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1055 90</XForm>
+<Shape Type="Rect" CutIndex="3" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 903.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="30.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1060 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="4"/>
-<name Value="interval: 0.10,angle: 45.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.1,angle=45"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -369,23 +384,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="4" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1035 90</XForm>
+<Shape Type="Rect" CutIndex="4" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 883.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="45.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1040 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="5"/>
-<name Value="interval: 0.10,angle: 60.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.1,angle=60"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -437,23 +447,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="5" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1015 90</XForm>
+<Shape Type="Rect" CutIndex="5" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 863.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="60.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1020 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="6"/>
-<name Value="interval: 0.10,angle: 75.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.1,angle=75"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -505,23 +510,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="6" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 995 90</XForm>
+<Shape Type="Rect" CutIndex="6" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 843.0 51.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="75.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1000 100</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="7"/>
-<name Value="interval: 0.10,angle: 90.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.1,angle=90"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -573,33 +573,23 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="7" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 975 90</XForm>
+<Shape Type="Rect" CutIndex="7" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 823.0 51.0</XForm>
 </Shape>
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="90.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 980 100</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="interval: 0.2" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 115</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="angle:" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 130</XForm>
+     Str="i=0.1" H="6" LS="0" LnS="0" Ah="0" Av="1" Weld="1">
+        <XForm>1 0 0 1 810 51.0</XForm>
 </Shape>            
 
 <CutSetting type="Scan">
 <index Value="8"/>
-<name Value="interval: 0.20,angle: 0.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.2,angle=0"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -651,23 +641,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="8" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1095 135</XForm>
+<Shape Type="Rect" CutIndex="8" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 943.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1100 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="9"/>
-<name Value="interval: 0.20,angle: 15.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.2,angle=15"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -719,23 +704,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="9" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1075 135</XForm>
+<Shape Type="Rect" CutIndex="9" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 923.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="15.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1080 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="10"/>
-<name Value="interval: 0.20,angle: 30.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.2,angle=30"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -787,23 +767,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="10" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1055 135</XForm>
+<Shape Type="Rect" CutIndex="10" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 903.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="30.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1060 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="11"/>
-<name Value="interval: 0.20,angle: 45.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.2,angle=45"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -855,23 +830,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="11" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1035 135</XForm>
+<Shape Type="Rect" CutIndex="11" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 883.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="45.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1040 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="12"/>
-<name Value="interval: 0.20,angle: 60.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.2,angle=60"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -923,23 +893,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="12" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1015 135</XForm>
+<Shape Type="Rect" CutIndex="12" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 863.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="60.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1020 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="13"/>
-<name Value="interval: 0.20,angle: 75.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.2,angle=75"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -991,23 +956,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="13" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 995 135</XForm>
+<Shape Type="Rect" CutIndex="13" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 843.0 71.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="75.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1000 145</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="14"/>
-<name Value="interval: 0.20,angle: 90.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.2,angle=90"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1059,33 +1019,23 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="14" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 975 135</XForm>
+<Shape Type="Rect" CutIndex="14" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 823.0 71.0</XForm>
 </Shape>
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="90.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 980 145</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="interval: 0.3" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 160</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="angle:" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 175</XForm>
+     Str="i=0.2" H="6" LS="0" LnS="0" Ah="0" Av="1" Weld="1">
+        <XForm>1 0 0 1 810 71.0</XForm>
 </Shape>            
 
 <CutSetting type="Scan">
 <index Value="15"/>
-<name Value="interval: 0.30,angle: 0.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.3,angle=0"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1137,23 +1087,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="15" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1095 180</XForm>
+<Shape Type="Rect" CutIndex="15" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 943.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1100 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="16"/>
-<name Value="interval: 0.30,angle: 15.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.3,angle=15"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1205,23 +1150,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="16" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1075 180</XForm>
+<Shape Type="Rect" CutIndex="16" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 923.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="15.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1080 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="17"/>
-<name Value="interval: 0.30,angle: 30.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.3,angle=30"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1273,23 +1213,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="17" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1055 180</XForm>
+<Shape Type="Rect" CutIndex="17" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 903.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="30.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1060 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="18"/>
-<name Value="interval: 0.30,angle: 45.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.3,angle=45"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1341,23 +1276,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="18" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1035 180</XForm>
+<Shape Type="Rect" CutIndex="18" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 883.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="45.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1040 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="19"/>
-<name Value="interval: 0.30,angle: 60.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.3,angle=60"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1409,23 +1339,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="19" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1015 180</XForm>
+<Shape Type="Rect" CutIndex="19" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 863.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="60.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1020 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="20"/>
-<name Value="interval: 0.30,angle: 75.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.3,angle=75"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1477,23 +1402,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="20" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 995 180</XForm>
+<Shape Type="Rect" CutIndex="20" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 843.0 91.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="75.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1000 190</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="21"/>
-<name Value="interval: 0.30,angle: 90.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.3,angle=90"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1545,33 +1465,23 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="21" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 975 180</XForm>
+<Shape Type="Rect" CutIndex="21" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 823.0 91.0</XForm>
 </Shape>
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="90.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 980 190</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="interval: 0.4" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 205</XForm>
-</Shape>            
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="angle:" H="8" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1150 220</XForm>
+     Str="i=0.3" H="6" LS="0" LnS="0" Ah="0" Av="1" Weld="1">
+        <XForm>1 0 0 1 810 91.0</XForm>
 </Shape>            
 
 <CutSetting type="Scan">
 <index Value="22"/>
-<name Value="interval: 0.40,angle: 0.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.4,angle=0"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1623,23 +1533,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="22" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1095 225</XForm>
+<Shape Type="Rect" CutIndex="22" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 943.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="0.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1100 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="23"/>
-<name Value="interval: 0.40,angle: 15.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.4,angle=15"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1691,23 +1596,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="23" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1075 225</XForm>
+<Shape Type="Rect" CutIndex="23" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 923.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="15.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1080 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="24"/>
-<name Value="interval: 0.40,angle: 30.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.4,angle=30"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1759,23 +1659,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="24" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1055 225</XForm>
+<Shape Type="Rect" CutIndex="24" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 903.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="30.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1060 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="25"/>
-<name Value="interval: 0.40,angle: 45.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.4,angle=45"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1827,23 +1722,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="25" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1035 225</XForm>
+<Shape Type="Rect" CutIndex="25" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 883.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="45.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1040 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="26"/>
-<name Value="interval: 0.40,angle: 60.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.4,angle=60"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1895,23 +1785,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="26" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 1015 225</XForm>
+<Shape Type="Rect" CutIndex="26" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 863.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="60.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1020 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="27"/>
-<name Value="interval: 0.40,angle: 75.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.4,angle=75"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -1963,23 +1848,18 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="27" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 995 225</XForm>
+<Shape Type="Rect" CutIndex="27" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 843.0 111.0</XForm>
 </Shape>
-
-<Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="75.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 1000 235</XForm>
-</Shape>            
 
 <CutSetting type="Scan">
 <index Value="28"/>
-<name Value="interval: 0.40,angle: 90.00"/>
-<minPower Value="20"/>
-<maxPower Value="20"/>
+<name Value="interval=0.4,angle=90"/>
+<minPower Value="80.0"/>
+<maxPower Value="80.0"/>
 <minPower2 Value="20"/>
 <maxPower2 Value="20"/>
-<speed Value="100"/>
+<speed Value="100.0"/>
 <kerf Value="0"/>
 <zOffset Value="0"/>
 <enableLaser1 Value="1"/>
@@ -2031,13 +1911,13 @@
 
 </CutSetting>
 
-<Shape Type="Rect" CutIndex="28" W="10" H="10" Cr="0">
-    <XForm>1 0 0 1 975 225</XForm>
+<Shape Type="Rect" CutIndex="28" W="14" H="14" Cr="0">
+    <XForm>1 0 0 1 823.0 111.0</XForm>
 </Shape>
 
 <Shape Type="Text" CutIndex="0" Font="Arial,-1,100,5,50,0,0,0,0,0" 
-     Str="90.00" H="6" LS="0" LnS="0" Ah="0" Av="0" Weld="1">
-        <XForm>1 0 0 1 980 235</XForm>
+     Str="i=0.4" H="6" LS="0" LnS="0" Ah="0" Av="1" Weld="1">
+        <XForm>1 0 0 1 810 111.0</XForm>
 </Shape>            
 
     <Notes ShowOnLoad="0" Notes="Generated with lightburn-tester, command:&#10;  ./lbt.py -f examples/example2.lbrn power=80 speed=100 interval=0.1,0.2,0.3,0.4 angle=0-90@15"/>
