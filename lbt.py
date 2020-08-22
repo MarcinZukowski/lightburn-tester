@@ -134,10 +134,7 @@ def isfloat(value):
 
 
 def fmt(v):
-    if int(v) == v:
-        return str(int(v))
-    else:
-        return f"{v:.2f}"
+    return f"{v:.3f}".rstrip("0").rstrip(".")
 
 
 # Helper to handle special "power" behavior
