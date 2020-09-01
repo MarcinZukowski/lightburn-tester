@@ -11,12 +11,24 @@ PROLOGUE_FILENAME = "data/prologue.xml"
 EPILOGUE_FILENAME = "data/epilogue.xml"
 DEFAULT_LEFT_MARGIN = 950
 DEFAULT_MODE = "Fill"
-FONT_SIZE_TITLE = 10
-FONT_SIZE_LABELS = 8
-FONT_SIZE_VALUES = 6
+FONT_SIZE_TITLE = 8
+FONT_SIZE_LABELS = 7
+FONT_SIZE_VALUES = 5
+FONT_SIZE_TILES = 4
 BOX_SIZE = 14
 BOX_SPACE = 20
 BOX_SIZE_HALF = BOX_SIZE / 2
+DEFAULT_TEXT_ON_TILES = False
+
+KEY_SQUARE = "square"
+KEY_CIRCLE = "circle"
+KEY_MUFFIN = "muffin"
+KEY_TEXT = "text"
+DEFAULT_SHAPE = KEY_MUFFIN
+shapes = [KEY_MUFFIN, KEY_SQUARE, KEY_CIRCLE, KEY_TEXT]
+shape = DEFAULT_SHAPE
+
+text_on_tiles = DEFAULT_TEXT_ON_TILES
 
 KEY_DEFAULT = "default"
 KEY_SHORT = "short"
@@ -47,7 +59,7 @@ settings_list = [
     Setting("power", 80, "p"),
     Setting("speed", 100, "s"),
     Setting("interval", 0.1, "i"),
-    Setting("passCount", 1, "pc"),
+    Setting("numPasses", 1, "np"),
     Setting("angle", 0, "a"),
 ]
 
@@ -164,6 +176,8 @@ def set_cut(k, v):
     if k == "power":
         set_cut("minPower", v)
         set_cut("maxPower", v)
+    elif k == "numPasses":
+        cut[k] = int(v)
     else:
         cut[k] = v
 
@@ -196,6 +210,11 @@ def gen_dynamic(parents, current, next):
             first_line = False
 
         x = lmargin
+
+        header = ""
+        if len(parents) > 0:
+            header = ",  ".join([f"{settings_map[k].short}={fmt(v)}" for (k, v) in parents])
+
         for v in values:
             set_cut("index", current_cut)
             set_cut(name, v)
@@ -210,18 +229,72 @@ def gen_dynamic(parents, current, next):
 {cutvalues}
 </CutSetting>
 """
+            cx = x - BOX_SIZE_HALF
+            cy = current_y + BOX_SIZE_HALF
 
-            body += f"""
+            if shape == KEY_SQUARE:
+                body += f"""
 <Shape Type="Rect" CutIndex="{current_cut}" W="{BOX_SIZE}" H="{BOX_SIZE}" Cr="0">
-    <XForm>1 0 0 1 {x - BOX_SIZE_HALF} {current_y + BOX_SIZE_HALF}</XForm>
+    <XForm>1 0 0 1 {cx} {cy}</XForm>
 </Shape>
 """
+            elif shape == KEY_CIRCLE:
+                body += f"""
+<Shape Type="Ellipse" CutIndex="{current_cut}" Rx="{BOX_SIZE_HALF}" Ry="{BOX_SIZE_HALF}">
+    <XForm>1 0 0 1 {cx} {cy}</XForm>
+</Shape>
+"""
+            elif shape == KEY_MUFFIN:
+                scale = BOX_SIZE / 20 * 1.2
+                def sx(v):
+                    return cx + scale * v
+
+                def sy(v):
+                    return cy + scale * v
+
+                body += f"""
+<Shape Type="Path" CutIndex="{current_cut}">
+    <XForm>1 0 0 1 0 0</XForm>
+    <V vx="{sx(1.5195313)}" vy="{sy(-8.0429688)}" c0x="{sx(6.8419399)}" c0y="{sy(-7.7834616)}" c1x="{sx(1.1787055)}" c1y="{sy(-8.0638018)}"/>
+    <V vx="{sx(11)}" vy="{sy(1.9453125)}" c0x="1" c0y="0" c1x="{sx(11.018312)}" c1y="{sy(-3.3833861)}"/>
+    <V vx="{sx(6.0117188)}" vy="{sy(10.058594)}" c0x="1" c0y="0" c1x="1" c1y="0"/>
+    <V vx="{sx(-3.9960938)}" vy="{sy(10.058594)}" c0x="1" c0y="0" c1x="1" c1y="0"/>
+    <V vx="{sx(-9)}" vy="{sy(1.9453125)}" c0x="{sx(-9.0065451)}" c0y="{sy(-3.384521)}" c1x="1" c1y="0"/>
+    <V vx="{sx(0.49609375)}" vy="{sy(-8.0429688)}" c0x="{sx(0.83691972)}" c0y="{sy(-8.0638018)}" c1x="{sx(-4.8272738)}" c1y="{sy(-7.7804079)}"/>
+    <P T="B" p0="0" p1="1"/>
+    <P T="L" p0="1" p1="2"/>
+    <P T="L" p0="2" p1="3"/>
+    <P T="L" p0="3" p1="4"/>
+o    <P T="B" p0="4" p1="5"/>
+    <P T="B" p0="5" p1="0"/>
+</Shape>
+"""
+            elif shape == KEY_TEXT:
+                body += f"""
+<Shape Type="Text" CutIndex="{current_cut}" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="ABC" H="8" LS="0" LnS="0" Ah="1" Av="1" Weld="1">
+        <XForm>1 0 0 1 {cx} {cy-4}</XForm>
+</Shape>            
+<Shape Type="Text" CutIndex="{current_cut}" Font="Arial,-1,100,5,50,0,0,0,0,0" 
+     Str="xyz!" H="8" LS="0" LnS="0" Ah="1" Av="1" Weld="1">
+        <XForm>1 0 0 1 {cx} {cy+4}</XForm>
+</Shape>            
+"""
+            else:
+                error(f"Shape not implemented: {shape}")
+
+            if text_on_tiles:
+                label = f"{settings_map[name].short}={fmt(v)}"
+                if header:
+                    fs = FONT_SIZE_TILES
+                    add_text(x - BOX_SIZE_HALF, current_y + BOX_SIZE_HALF, fs, header, ah=1, av=2)
+                add_text(x - BOX_SIZE_HALF, current_y + BOX_SIZE_HALF + fs, fs, label, ah=1, av=2)
+
             x -= BOX_SPACE
 
             current_cut += 1
 
-        if len(parents) > 0:
-            header = ",  ".join([f"{settings_map[k].short}={fmt(v)}" for (k, v) in parents])
+        if header:
             add_text(x, current_y + BOX_SIZE_HALF, FONT_SIZE_VALUES, header, av=1)
 
         current_y += BOX_SPACE
@@ -239,18 +312,24 @@ def add_text(x, y, h, s, ah=0, av=0):
 
 
 def main():
-    global current_y, mode, parser, body
+    global current_y, mode, parser, body, text_on_tiles, shape
 
     parser = MyParser(usage='Usage: %prog [settings] ',
                       description="Generate ")
     parser.add_option("-f", "--filename", help="File name to generate")
     parser.add_option("-m", "--mode", help=f"Mode (values: {','.join(modes.keys())})")
+    parser.add_option("-t", "--text", help="Text on tiles", action = "store_true")
+    parser.add_option("-s", "--shape", help=f"Mode (values: {','.join(shapes)})")
 
     (options, args) = parser.parse_args()
     filename = options.filename or DEFAULT_FILENAME
     mode = options.mode or DEFAULT_MODE
     assert mode in modes, f"Unknown mode: {mode}"
     mode = modes[mode]
+    text_on_tiles = options.text or DEFAULT_TEXT_ON_TILES
+
+    shape = options.shape or DEFAULT_SHAPE
+    assert shape in shapes, f"Unknown shape: {shape}"
 
     if len(args) == 0:
         usage("Need to provide some settings")
