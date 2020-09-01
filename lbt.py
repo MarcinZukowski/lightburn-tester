@@ -61,6 +61,7 @@ settings_list = [
     Setting("interval", 0.1, "i"),
     Setting("numPasses", 1, "np"),
     Setting("angle", 0, "a"),
+    Setting("frequency", None, "f"),
 ]
 
 settings_map = {v.name: v for v in settings_list}
@@ -178,6 +179,9 @@ def set_cut(k, v):
         set_cut("maxPower", v)
     elif k == "numPasses":
         cut[k] = int(v)
+    elif k == "frequency":
+        cut[k] = int(v)
+        cut["overrideFrequency"] = 1
     else:
         cut[k] = v
 
