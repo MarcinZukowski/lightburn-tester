@@ -328,7 +328,7 @@ def main():
     (options, args) = parser.parse_args()
     filename = options.filename or DEFAULT_FILENAME
     mode = options.mode or DEFAULT_MODE
-    assert mode in modes, f"Unknown mode: {mode}"
+    assert mode in modes, f"Unknown mode: {mode}, allowed values: {', '.join(modes.keys())}"
     mode = modes[mode]
     text_on_tiles = options.text or DEFAULT_TEXT_ON_TILES
 
