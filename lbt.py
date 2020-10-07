@@ -48,11 +48,12 @@ modes = {
 
 # Helper class to keep one setting information
 class Setting:
-    def __init__(self, name, default, short = None):
+    def __init__(self, name, default, short=None):
         self.name = name
         self.default= default
         self.short = short or name
 
+KW_POWERSCALE = "powerScale"
 
 # Available settings
 settings_list = [
@@ -62,6 +63,7 @@ settings_list = [
     Setting("numPasses", 1, "np"),
     Setting("angle", 0, "a"),
     Setting("frequency", None, "f"),
+    Setting(KW_POWERSCALE, 100, "ps"),
 ]
 
 settings_map = {v.name: v for v in settings_list}
@@ -128,9 +130,11 @@ cut = {
 current_y = 0
 body = ""
 lmargin = DEFAULT_LEFT_MARGIN
-current_cut = 1
 parser = None
 mode = None
+
+current_cut = 0
+cut_map = {}
 
 
 class MyParser(optparse.OptionParser):
@@ -220,31 +224,49 @@ def gen_dynamic(parents, current, next):
             header = ",  ".join([f"{settings_map[k].short}={fmt(v)}" for (k, v) in parents])
 
         for v in values:
-            set_cut("index", current_cut)
+            new_parents = parents + [(name, v)]
+            new_parents = filter(lambda x: x[0] != KW_POWERSCALE, new_parents)
+            cut_name = ",".join([f"{k}={fmt(v)}" for (k, v) in new_parents])
+
+            cut_index = cut_map.get(cut_name)
+
             set_cut(name, v)
 
-            new_parents = parents + [(name, v)]
-            cutname = ",".join([f"{k}={fmt(v)}" for (k, v) in new_parents])
-            set_cut("name", cutname)
+            if not cut_index:
+                # Create a new cut
+                current_cut += 1
 
-            cutvalues = "".join([f"""<{k} Value="{v}"/>\n""" for (k, v) in cut.items()])
-            body += f"""
+                set_cut("index", current_cut)
+                set_cut("name", cut_name)
+
+                cut_items = filter(lambda x: x[0] != KW_POWERSCALE, cut.items())
+                cut_values = "".join([f"""<{k} Value="{v}"/>\n""" for (k, v) in cut_items])
+                body += f"""
 <CutSetting type="{mode}">
-{cutvalues}
+{cut_values}
 </CutSetting>
 """
+                cut_map[cut_name] = current_cut
+                cut_index = current_cut
+
+            shape_meta = f'''CutIndex="{cut_index}"'''
+            power_scale = cut.get(KW_POWERSCALE)
+            if power_scale is not None:
+                shape_meta += f''' PowerScale="{power_scale}"'''
+
+            # Create a new shape
             cx = x - BOX_SIZE_HALF
             cy = current_y + BOX_SIZE_HALF
 
             if shape == KEY_SQUARE:
                 body += f"""
-<Shape Type="Rect" CutIndex="{current_cut}" W="{BOX_SIZE}" H="{BOX_SIZE}" Cr="0">
+<Shape Type="Rect" {shape_meta} W="{BOX_SIZE}" H="{BOX_SIZE}" Cr="0">
     <XForm>1 0 0 1 {cx} {cy}</XForm>
 </Shape>
 """
             elif shape == KEY_CIRCLE:
                 body += f"""
-<Shape Type="Ellipse" CutIndex="{current_cut}" Rx="{BOX_SIZE_HALF}" Ry="{BOX_SIZE_HALF}">
+<Shape Type="Ellipse" {shape_meta} Rx="{BOX_SIZE_HALF}" Ry="{BOX_SIZE_HALF}">
     <XForm>1 0 0 1 {cx} {cy}</XForm>
 </Shape>
 """
@@ -257,7 +279,7 @@ def gen_dynamic(parents, current, next):
                     return cy + scale * v
 
                 body += f"""
-<Shape Type="Path" CutIndex="{current_cut}">
+<Shape Type="Path" {shape_meta}>
     <XForm>1 0 0 1 0 0</XForm>
     <V vx="{sx(1.5195313)}" vy="{sy(-8.0429688)}" c0x="{sx(6.8419399)}" c0y="{sy(-7.7834616)}" c1x="{sx(1.1787055)}" c1y="{sy(-8.0638018)}"/>
     <V vx="{sx(11)}" vy="{sy(1.9453125)}" c0x="1" c0y="0" c1x="{sx(11.018312)}" c1y="{sy(-3.3833861)}"/>
@@ -295,8 +317,6 @@ o    <P T="B" p0="4" p1="5"/>
                 add_text(x - BOX_SIZE_HALF, current_y + BOX_SIZE_HALF + fs, fs, label, ah=1, av=2)
 
             x -= BOX_SPACE
-
-            current_cut += 1
 
         if header:
             add_text(x, current_y + BOX_SIZE_HALF, FONT_SIZE_VALUES, header, av=1)
@@ -371,7 +391,8 @@ def main():
             constants.append(res)
         else:
             dynamic.append(res)
-            mul *= len(genvalues)
+            if name != KW_POWERSCALE:
+                mul *= len(genvalues)
 
     if mul > 28:
         error(f"Too many combinations ({mul}), max is 28")
