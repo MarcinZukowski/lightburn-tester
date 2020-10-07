@@ -5,6 +5,8 @@ a very neat laser-cutter software.
 
 Can be used to check the output/result for various settings in one go.
 
+See also [this nice web-based generator by Glenn Wilton](https://www.o2creative.co.nz/laser/lightburn_engrave_image_power_generator.php)
+
 ## Examples
 
 * Test various power / speed / interval settings:
